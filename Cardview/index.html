@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Backbone NG App</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    
+</head>
+<body>
+        
+    <div class="container mt-5 mb-5">
+        <div class="row">
+            <div class="col">
+                <div id="app-container" class="row">
+                </div>
+            </div>
+        </div>
+    </div> 
+    
+    <!-- <script type="text/template" id="list-template">
+        
+    </script> -->
+
+    <script type="text/template" id="card-template">
+        
+            <ul class="card p-4">
+                <div class="card" id="">
+                    <div class="card-header">
+                        <strong><%= country.name%></strong>  (<%= country.capital%>)
+                    </div>
+                    <div class="flag-wrapper">
+                        <img class="card-img-top flag" src= <%= country.flag%> alt="Card image cap">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title"><%= country.currencies[0].symbol %> <%= country.currencies[0].name %> ( <%= country.currencies[0].code %> ) </h5>
+                        <p class="card-text">
+                            <% _.each(country.languages, function(lang, index) { %>
+                            <%= lang.name %>  
+                            <% }) %>
+                        </p>
+                        <a href="https://www.google.com/maps/search/?api=1&query=<%= country.latlng[0]%>,<%= country.latlng[1]%>" 
+                        class="" target="blank"><i class="fas fa-map-marker-alt"></i></a>
+                        <button type="button" class="btn" data-toggle="modal" data-target="#exampleModal">
+                            <i class="far fa-clock"></i>
+                        </button>                          
+                    </div>
+                </div>
+            </ul>
+    
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+                    <div class="modal-dialog  modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <img class="card-img-top flag-modal" src= <%= country.flag%> alt="Card image cap">
+                            <h2><%= country.name %></h2>
+                        </div>
+                        <div class="modal-body">
+                            <h5> Current time is: <%= country.code %></h5>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">ok</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </script>
+
+        <!-- <script type="text/template" id="country-template">
+            <div class="card" id="details-card">
+                <div class="card-header">
+                    <h5>
+                        <span id="back" class="pull-left btn"><i class="fas fa-arrow-left"></i></span>
+                        <span id="country-name"><%= country.name %></span>
+                    </h5>
+                </div>
+                <div id="" class="card-img-top">
+                    <img src="<%= country.flag %>" alt="" class="">
+                </div>
+                <div class="card-details-list">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Capital: </strong><%= country.capital %></li>
+                        <li class="list-group-item"><strong>Region: </strong><%= country.region %></li>
+                        <li class="list-group-item"><strong>Subregion: </strong><%= country.subregion %></li>
+                        <li class="list-group-item"><strong>Currency: </strong><%= country.currencies[0].name %></li>
+                        <li class="list-group-item"><strong>Languages: </strong>
+                            <% _.each(country.languages, function(lang){ %>
+                                <%= lang.name %>
+                            <% }) %>
+                        </li>
+                        <li class="list-group-item"><strong>Native Name: </strong><%= country.nativeName %></li>
+                        <li class="list-group-item"><strong>Calling Codes: </strong><%= country.callingCodes %></li>
+                        <li class="list-group-item"><strong>Area: </strong><%= country.area %></li>
+                        <li class="list-group-item"><strong>Population: </strong><%= country.population %></li>
+                    </ul>
+                </div>
+            </div>
+        </script> -->
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.4.0/backbone-min.js"></script>  
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+// List View , multiple element show
+
+// var ListView = Backbone.View.extend({
+//     el: "#app-container",
+//     template: _.template($("#list-template").html()),
+//     initialize: function(){
+//         this.render();
+//     },
+//     render: function(){
+//         var self = this;
+
+//         _.each(this.collection, function(country){
+//             var cardView = new CardView({model: country}); 
+//             self.$el.append(cardView.render().$el);
+//         });
+//         return this;
+//     }
+// });
