@@ -1,0 +1,36 @@
+body{
+    background: #e1e1e1;
+}
+header{
+    align-content: center;
+}
+
+.flag{
+   max-width: 500px;
+   min-width: 100%;
+   max-height: 300px;
+   min-height: 300px;
+   object-fit: contain;
+}
+
+.flag-modal{
+    max-height: 50px;
+    max-width: 80px;
+    float: right;
+}
+
+#details-card{
+    margin: auto;
+    width: fit-content;
+}
+
+#card-details{
+    height: 300px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+.container{
+    min-width: 90%;
+}

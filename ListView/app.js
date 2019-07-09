@@ -15,7 +15,7 @@ var Countries = Backbone.Collection.extend({
 var countries = new Countries();
 countries.fetch()           //data is fetched in collection
     .then(function (response) {
-        var listView = new ListView({ model: response[1] });
+        var listView = new ListView({ collection: response });
         console.log(response)
     })
 
@@ -49,8 +49,8 @@ var ListView = Backbone.View.extend({
         var that = this;
         _.each(this.collection, function (country) {
             var cardView = new CardView({model:country})
-            self.$el.append(cardView.render().$el)
+            that.$el.append(cardView.render().$el)
         })
-        return this
+        return this;
     }
 })
